@@ -1,0 +1,38 @@
+<header>
+  <ul>
+    <% header.parentLinks.forEach(parentLink => { %>
+      <li>
+        <%= parentLink.name %>
+        <% if (parentLink.subCategories) { %>
+          <ul class="dropdown">
+            <% parentLink.subCategories.forEach(subCategory => { %>
+              <li>
+                <span><%= subCategory.name %></span>
+                <% if (subCategory.subCategoryLinks) { %>
+                  <ul class="sub-dropdown">
+                    <% subCategory.subCategoryLinks.forEach(subCategoryLink => { %>
+                      <li>
+                        <%- include('link', {data: subCategoryLink}) %>
+                      </li>
+                    <% }) %>
+                  </ul>
+                <% } %>
+              </li>
+            <% }) %>
+          </ul>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <div class="country-selector">
+    <% header.parentLinks.forEach(parentLink => { %>
+      <p><%= parentLink.name %></p>
+    <% }) %>
+  </div>
+
+  <p><%= translate('apple') %></p>
+  <p><%= 2 + 2 %></p>
+  <button><%= translate('greeting') %></button>
+  <script src="../scripts/header.js"></script>
+</header>

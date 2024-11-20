@@ -1,0 +1,5 @@
+{% macro link(data) %}
+  <a href="{{ data.href }}" target="{{ data.target }}" data-tracking="{{ data.tracking }}">
+    {{ data.name }}
+  </a>
+{% endmacro %}

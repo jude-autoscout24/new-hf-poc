@@ -1,0 +1,39 @@
+{% import "macros.njk" as macros %}
+
+<header>
+     {% include "countrySelector.njk" %}
+      <ul>
+    {% for parentLink in header.parentLinks %}
+      <li>
+        {{ parentLink.name }}
+        {% if parentLink.subCategories %}
+          <ul class="dropdown">
+            {% for subCategory in parentLink.subCategories %}
+              <li>
+                <span>{{ subCategory.name }}</span>
+                {% if subCategory.subCategoryLinks %}
+                  <ul class="sub-dropdown">
+                    {% for subCategoryLink in subCategory.subCategoryLinks %}
+                      <li>
+                        {{ macros.link(subCategoryLink) }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+     <div class="country-selector">
+          {% for parentLink in header.parentLinks %}
+               <p>{{ parentLink.name}}</p>
+          {% endfor %}
+     </div>
+     <p>{{ 'apple' | translate }}</p>
+     <p>{{ 2 + 2 }}</p>
+     <button>{{'greeting' | translate}}</button>
+     <script src="../scripts/header.js"></script>
+</header>

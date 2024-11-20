@@ -1,0 +1,85 @@
+<style>
+.country-selector {
+  display: list-item;
+}
+
+.country-selector .title {
+  padding-top: 9px;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.country-selector .title::after {
+  top: 12px;
+}
+
+.country-selector img {
+  width: 21px;
+  height: 16px;
+  margin-top: 4px;
+}
+
+.country-selector a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 8px 0;
+}
+
+.country-selector a span {
+  margin-left: 12px;
+  line-height: 1;
+}
+
+.country-selector a + span + a {
+  padding: 4px 0;
+}
+
+.hfo-nav__link {
+  text-decoration: none;
+  display: flex;
+  padding: 8px;
+  align-items: center;
+}
+
+.hfo-nav__link:focus {
+  color: #333333;
+}
+
+.hfo-nav__link:hover {
+  color: #333;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+}
+
+</style>
+
+{% set coreCountries = [
+    { "name": "Deutschland", "flag": "flag-de", "url": "https://www.autoscout24.de" },
+    { "name": "Italia", "flag": "flag-it", "url": "https://www.autoscout24.it" },
+    { "name": "Österreich", "flag": "flag-at", "url": "https://www.autoscout24.at" },
+    { "name": "Nederland", "flag": "flag-nl", "url": "https://www.autoscout24.nl" }
+] %}
+
+{% set otherLanguages = [
+    { "name": "English", "url": "https://www.autoscout24.com" },
+    { "name": "Romana", "url": "https://www.autoscout24.ro" }
+] %}
+
+<div class="country-selector">
+  {% for country in coreCountries %}
+  
+    <a href="{{ country.url }}" class="hfo-nav__link">
+      <img src="../assets/header/flags/{{ country.flag }}.svg" class="hfo-nav__country-selector__img" loading="lazy" />
+      <span class="hfo-nav__country-selector__title">{{ country.name }}</span>
+    </a>
+  {% endfor %}
+</div>
+
+<hr />
+
+<div class="language-selector">
+  {% for language in otherLanguages %}
+    <a href="{{ language.url }}" class="hfo-nav__link">{{ language.name }}</a>
+  {% endfor %}
+</div>

@@ -1,0 +1,66 @@
+{
+    "header": {
+        "de_DE": {
+            "parentLinks": [
+                {
+                    "name": "kaufen",
+                    "subCategories": [
+                        {
+                            "name": "Auto",
+                            "subCategoryLinks": [
+                                {
+                                    "name": "Auto Kaufen",
+                                    "href": "www.autoscout.de/auto-kaufen",
+                                    "target": "self",
+                                    "tracking": "auto-kaufen"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Weitere Fahrzeuge",
+                            "subCategoryLinks": [
+                                {
+                                    "name": "Motorrad",
+                                    "href": "www.autoscout.de/moto",
+                                    "target": "self",
+                                    "tracking": "moto"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "en_GB": {
+            "parentLinks": [
+                {
+                    "name": "buy",
+                    "subCategories": [
+                        {
+                            "name": "Car",
+                            "subCategoryLinks": [
+                                {
+                                    "name": "Buy Car",
+                                    "href": "www.autoscout.de/auto-kaufen",
+                                    "target": "self",
+                                    "tracking": "buy-car"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Other Vehicles",
+                            "subCategoryLinks": [
+                                {
+                                    "name": "Motorcycle",
+                                    "href": "www.autoscout.de/moto",
+                                    "target": "self",
+                                    "tracking": "motorcycle"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
